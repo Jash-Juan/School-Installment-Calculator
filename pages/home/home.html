@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>School Installment Calculator App</h1>
+  <p>
+    Find out the right amount you should loan as you explore and compare the different kinds of payment terms.
+  </p>
+  <p>
+    Source: https://www.bpicards.com/Tools#tabs-2
+  </p>
+  <br/>
+
+  <ion-item>
+  <ion-label> Enter Amount: </ion-label>
+  <ion-input type = "number" [(ngModel)]="amount"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label> Terms: </ion-label>
+  <ion-input type = "number" [(ngModel)]="terms"></ion-input>
+</ion-item>
+<button ion-button color="secondary" (click)="calculateMonthly () " > Calculate </button>
+<ion-item *ngIf="payment">
+  <h2> Your Total Interest Payable is: {{interest}} </h2>
+  <h2> Your Total Amount Payable is: {{payable}} </h2>
+  <h2> Your Total Monthly Payment is: {{payment}} </h2>
+
